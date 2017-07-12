@@ -1,0 +1,26 @@
+#gray{
+            padding-top:40px;
+            margin-bottom: 50px;
+            line-height: 150px;
+        }
+        #green{
+            line-height: 100px;
+            margin-bottom: 150px;
+        }
+        #green h2{
+            line-height: 100px;
+        }
+        #max_img{
+          margin-top: 50px;
+        }
+        #min_img{
+            margin-top: 60px;
+        }
+        #min_banner{
+            margin:50px 0;
+        }
+        footer{
+            background: #1b252e;
+            color:#7b858e;
+            line-height: 60px;
+        }
