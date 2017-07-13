@@ -1,0 +1,52 @@
+#banner_max{
+            line-height:60px;
+            color:#404040;
+            letter-spacing: 1px;
+        }
+        #banner_max h1{
+            line-height: 150px;
+        }
+        #banner_max h4{
+            line-height: 40px;
+        }
+        #form{
+            margin-top: 40px;
+        }
+        #icon_max{
+            font-size: 260px;
+            color:#59be7b;
+        }
+        #icon_start{
+            display: inline-block;
+            font-size: 28px;
+            margin-right: 20px;
+        }
+        #green{
+            margin:30px 0 0;
+            color:#fff;
+            background: #59be7b;
+            padding-bottom: 60px;
+        }
+        #green h1{
+            line-height: 180px;
+        }
+        #green #green_img{
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        #footer{
+            background: #67678a;
+            color:#cfcfd3;
+        }
+        #footer dd{
+            line-height: 24px;
+        }
+        #footer p{
+            color:#a0939f;
+        }
+        #footer_wrap{
+            padding:30px 0;
+        }
+        #lang{
+            margin-top: 30px;
+        }
