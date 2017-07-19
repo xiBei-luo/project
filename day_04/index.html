@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片预加载——无序加载</title>
+    <style type="text/css">
+        html,body{
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+        }
+        .btn:hover{
+            background: #eee;
+        }
+        .box{
+            text-align: center;
+        }
+        .btn{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 0 10px;
+            margin-right: 50px;
+            color: #333;
+        }
+        .loading{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #eee;
+            text-align: center;
+            font-size: 30px;
+        }
+        .progress{
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <img src="http://www.0759hi.com/files/2015-7/f20150708181928106731.jpg" alt="" id="img"/>
+       <!--  <img src="" alt="" id="img"/>
+        <img src="" alt="" id="img"/>
+        <img src="" alt="" id="img"/>
+        <img src="" alt="" id="img"/> --> -->
+        <p>
+            <a href="javascript:;" class="btn" data-control="prev">上一页</a>
+            <a href="javascript:;" class="btn" data-control="next">下一页</a>
+        </p>
+    </div>
+    <!-- 加载页 -->
+    <div class="loading">
+        <p class="progress">
+            0%
+        </p>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/preload.js"></script>
+    <script type="text/javascript">
+        var imgs=[
+        'http://g.hiphotos.baidu.com/lvpics/h=800/sign=6697bc90ab4bd1131bcdba326aaea488/4d086e061d950a7bac0a16270cd162d9f2d3c912.jpg',
+        'http://imgsrc.baidu.com/image/c0%3Dshijue1%2C0%2C0%2C294%2C40/sign=b73fbbec71899e516c8332572aceb346/0eb30f2442a7d9334a508c62a74bd11373f00122.jpg',
+        'http://www.jxt189.com/Upload/News/2010-10-27/%7B5dcfac4e-e6e1-4042-9641-39a63c9528a6%7D/Image/%B1%B1%BE%A9%B9%CA%B9%AC.jpg',
+        'http://data1.act3.qq.com/2011-02-10/22/4b18db0abef44d1a54ef93fe115b4d82.jpg'
+        ];
+
+        var index=0,
+            len=imgs.length,
+            $progress=$('.progress');
+
+
+            $.preload(imgs,{
+                each:function(count){
+                    $progress.html(Math.round((count+1)/len*100)+'%');
+                },
+                all:function(){
+                    $('.loading').hide();
+                    document.title='1/'+len;
+                }
+            });
+
+            // $.each(imgs,function(i,src){
+            //     var imgObj=new Image();
+
+            //     $(imgObj).on('load error',function(){
+            //         $progress.html(Math.round((count+1)/len*100)+'%');
+
+            //         if (count>=len-1) {
+            //             $('.loading').hide();
+            //             document.title='1/'+len;
+            //         }
+            //         count++;
+            //     })
+            //     imgObj.src=src;
+            // })
+
+        $('.btn').on('click',function(){
+            if($(this).data('control')==='prev'){
+                // index--;
+                // if(index<0){
+                //     index=0;
+                // }
+                index=Math.max(0,--index);//简便写法
+            }else{
+                index=Math.min(len-1,++index);//简便写法
+            }
+            document.title=(index+1)+'/'+len;
+            $('#img').attr('src',imgs[index]);
+        })
+    </script>
+
+
+
+    <!-- <script type="text/javascript">
+        var imgs=[
+        'http://g.hiphotos.baidu.com/lvpics/h=800/sign=6697bc90ab4bd1131bcdba326aaea488/4d086e061d950a7bac0a16270cd162d9f2d3c912.jpg',
+        'http://imgsrc.baidu.com/image/c0%3Dshijue1%2C0%2C0%2C294%2C40/sign=b73fbbec71899e516c8332572aceb346/0eb30f2442a7d9334a508c62a74bd11373f00122.jpg',
+        'http://www.jxt189.com/Upload/News/2010-10-27/%7B5dcfac4e-e6e1-4042-9641-39a63c9528a6%7D/Image/%B1%B1%BE%A9%B9%CA%B9%AC.jpg',
+        'http://data1.act3.qq.com/2011-02-10/22/4b18db0abef44d1a54ef93fe115b4d82.jpg'
+        ];
+
+        var index=0,
+            len=imgs.length;
+            count=0,
+            $progress=$('.progress');
+
+            $.each(imgs,function(i,src){
+                var imgObj=new Image();
+
+                $(imgObj).on('load error',function(){
+                    $progress.html(Math.round((count+1)/len*100)+'%');
+
+                    if (count>=len-1) {
+                        $('.loading').hide();
+                        document.title='1/'+len;
+                    }
+                    count++;
+                })
+                imgObj.src=src;
+            })
+
+        $('.btn').on('click',function(){
+            if($(this).data('control')==='prev'){
+                // index--;
+                // if(index<0){
+                //     index=0;
+                // }
+                index=Math.max(0,--index);//简便写法
+            }else{
+                index=Math.min(len-1,++index);//简便写法
+            }
+            document.title=(index+1)+'/'+len;
+            $('#img').attr('src',imgs[index]);
+        })
+    </script> -->
+</body>
+</html>
