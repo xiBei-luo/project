@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function show(){
+            alert(this);
+        }
+        show();//执行结果：window;常用的函数调用实际上是简写
+        show.call(12)//执行结果：12;函数名+call才是完整的函数调用写法
+        //call的作用：改变函数运行中的this
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

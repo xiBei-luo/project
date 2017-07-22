@@ -1,0 +1,12 @@
+关于call；
+平时没有注意到的函数调用，完整的函数调用方法为：函数名.call();
+call()中可以带参数，可以改变函数调用过程中this的值；
+当函数本身自带参数时：直接将参数写在后面，相当于比原来的函数调用多了一个参数
+例子：
+function show(a,b){
+            alert('this是'+this+',a是'+a+',b是'+b);
+        }
+        show(12,5);//执行结果：this是window，a是12，b是5
+        show.call('abc',12,5)//执行结果：this是abc，a是12，b是5
+
+apply与call的作用完全一样；只是参数不同，apply.call('abc',[12,5])

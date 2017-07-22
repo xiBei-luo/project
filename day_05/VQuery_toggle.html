@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script type="text/javascript" src="VQuery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('input').toggle(function(){
+                alert(1)
+            },function(){
+                alert(2)
+            },function(){
+                alert(3)
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="button" name="" value="1">
+    <input type="button" name="" value="2">
+    <input type="button" name="" value="3">
+    <input type="button" name="" value="4">
+</body>
+</html>

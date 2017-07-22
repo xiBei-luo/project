@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li{
+            float: left;
+            background: #ccc;
+            border: 1px solid #000;
+            margin: 5px;
+            padding: 10px;
+        }
+        .clear{
+            clear: both;
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+            background: #eee;
+            margin-top: 10px;
+        }
+        .active{
+            background: red;
+        }
+    </style>
+    <script type="text/javascript" src="VQuery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var aBtn=$('#tab').find('li');
+            var aDiv=$('.box').find('.content');
+
+            aBtn.click(function(){
+                aBtn.attr('className','link');
+                $(this).attr('className','active');
+                aDiv.hide();
+                aDiv.eq($(this).index()).show();
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul id="tab" class="tab">
+        <li class="active">男装</li>
+        <li class="link">女装</li>
+        <li class="link">童装</li>
+    </ul>
+    <div class="clear"></div>
+    <div class="box">
+        <div class="content">
+            <p>思考的快乐司机打开撒艰苦拉萨快乐撒就打开拉萨1</p>
+        </div>
+        <div class="content">
+            <p>思考的快乐司机打开撒艰苦拉萨快乐撒就打开拉萨2</p>
+        </div>
+        <div class="content">
+            <p>思考的快乐司机打开撒艰苦拉萨快乐撒就打开拉萨3</p>
+        </div>
+    </div>
+</body>
+</html>

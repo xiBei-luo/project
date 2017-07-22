@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script type="text/javascript" src="VQuery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#btn1').click(function(){
+                alert($('#txt1').attr('value'));
+            });
+
+            $('#btn2').click(function(){
+                $('#txt1').attr('value','卡kakahdjah');
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1" name="">
+    <input type="button" id="btn1" name="" value="读取文字">
+    <input type="button" id="btn2" name="" value="设置文字">
+</body>
+</html>
