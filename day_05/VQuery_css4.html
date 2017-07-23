@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css方法链式操作2</title>
+    <script type="text/javascript" src="VQuery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#btn1').hover(function(){
+                document.title='over';
+            },function(){
+                document.title='out';
+            }).css({width:'200px',height:'80px'}).css('background','red').click(function(){
+                alert(111);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="btn1" value="链式操作" name="">
+</body>
+</html>

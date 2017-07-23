@@ -4,11 +4,19 @@
 function myAddevent(obj,sEv,fn){
     if (obj.attachEvent) {
         obj.attachEvent('on'+sEv,function(){
-            fn.call(obj);//解决IE中this的问题
+            if(false==fn.call(obj)){
+                event.cancelBubble=true;
+                return false;//IE下阻止默认事件
+            };//call()解决IE中this的问题
         });
     }
     else{
-        obj.addEventListener(sEv,fn,false);
+        obj.addEventListener(sEv,function(ev){
+            if(false==fn.call(obj)){
+                ev.cancelBubble=true;
+                ev.preventDefault();//火狐谷歌下阻止默认事件
+            };
+        },false);
     }
 }//页面中含有多个事件时为了使它们都能正常运行，互不干扰，从而加上事件绑定
 
@@ -76,6 +84,7 @@ VQuery.prototype.click=function(fn){
     for(i=0;i<this.elements.length;i++){
         myAddevent(this.elements[i],'click',fn);
     }
+    return this;
 }
 
 VQuery.prototype.show=function(){
@@ -83,6 +92,7 @@ VQuery.prototype.show=function(){
     for(i=0;i<this.elements.length;i++){
         this.elements[i].style.display='block';
     }
+    return this;
 }
 
 VQuery.prototype.hide=function(){
@@ -90,6 +100,7 @@ VQuery.prototype.hide=function(){
     for(i=0;i<this.elements.length;i++){
         this.elements[i].style.display='none';
     }
+    return this;
 }
 
 VQuery.prototype.toggle=function(){
@@ -107,6 +118,7 @@ VQuery.prototype.toggle=function(){
             count++;
         })
     }
+    return this;
 }
 
 VQuery.prototype.hover=function(fnOver,fnOut){
@@ -115,6 +127,7 @@ VQuery.prototype.hover=function(fnOver,fnOut){
         myAddevent(this.elements[i], 'mouseover', fnOver);
         myAddevent(this.elements[i], 'mouseout', fnOut);
     }
+    return this;
 }
 //arguments参数个数不固定时使用
 VQuery.prototype.css=function(attr,value){
@@ -126,10 +139,21 @@ VQuery.prototype.css=function(attr,value){
         }
     } 
     else{
-        //当有一个参数时，获取属性
-        // return this.elements[0].style[attr];style只能获取行间样式
-        return getStyle(this.elements[0],attr);
+        if (typeof attr=='string') {
+            //当有一个参数时，获取属性
+            // return this.elements[0].style[attr];style只能获取行间样式
+            return getStyle(this.elements[0],attr);
+        }
+        else{//当参数是一个json对象时
+            for(i=0;i<this.elements.length;i++){
+                var k='';
+                for(k in attr){
+                    this.elements[i].style[k]=attr[k];
+                }
+            }
+        }
     }  
+    return this;//链式操作(回调)
 }
 
 VQuery.prototype.attr=function(attr,value){
@@ -141,7 +165,8 @@ VQuery.prototype.attr=function(attr,value){
     }
     else{
         return this.elements[0][attr];
-    } 
+    }
+    return this; 
 }
 
 VQuery.prototype.eq=function(n){
@@ -180,19 +205,22 @@ VQuery.prototype.index=function(){
     return getIndex(this.elements[0]);
 }
 
+//阻止冒泡和默认事件
+VQuery.prototype.bind=function(sEv,fn){
+    var i=0;
 
-
-
-
-
-
-
-
-
-
+    for(i=0;i<this.elements.length;i++){
+        myAddevent(this.elements[i],sEv,fn);
+    }
+}
 
 function $(vArg){
     return new VQuery(vArg);
+}
+
+//插件机制
+VQuery.prototype.extend=function(name,fn){
+    VQuery.prototype[name]=fn;
 }
 
 

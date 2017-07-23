@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 50px;
+            height: 50px;
+            float: left;
+            background: red;
+            margin: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="VQuery.js"></script>
+    <script type="text/javascript">
+        $().extend('size',function(){
+            return this.elements.length;
+        })
+        $(function(){
+            alert($('div').find('span').size());
+        });
+    </script>
+</head>
+<body>
+    <span></span>
+
+    <div><span></span></div>
+    <div></div>
+    <div><span></span></div>
+    <div></div>
+</body>
+</html>
