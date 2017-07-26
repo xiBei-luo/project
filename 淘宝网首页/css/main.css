@@ -1,0 +1,56 @@
+// .g布局  .m模块  .u原件  .c公用
+
+// header{
+//     background: #EFEFEF;
+// }
+
+
+.g_topbar{
+    background-color: #EFEFEF;
+}
+.g_topbar .cw{
+    height: 35px;
+    line-height: 35px;
+}
+.m_toplist li{
+    float: left;
+}
+.tl_inner_mr li{
+    margin-left: 7px;
+}
+.u_trlink,.u_dropdown{
+    display: inline-block;
+    height: 35px;
+    padding:0 10px;
+}
+.u_trlink:hover{
+    color: #ff4300;
+}
+.u_dropdown:hover{
+    background: #fff;
+    border-left: 1px solid #666;
+    border-right: 1px solid #666;
+    padding: 0 9px;
+}
+.u_dropdown i{
+    width: 5px;
+    height: 3px;
+}
+// 顶部结束
+
+
+
+
+
+
+// 公用样式
+body{font-size: 12px;}
+a{color:#000;text-decoration: none;}
+.fl{float: left;}
+.fr{float: right;}
+.cw{width: 1190px; margin-left: auto;margin-right: auto;}
+.orange{color:#ff4300;}
+.u_dropdown i{
+    background: url()
+}
+
