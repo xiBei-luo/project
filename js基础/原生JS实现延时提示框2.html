@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: green;
+            position: absolute;
+            left: 120px;
+            top: 0px;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var oDiv1=document.getElementById('div1');
+            var oDiv2=document.getElementById('div2');
+            var timer=null;
+
+            function show(){
+                oDiv2.style.display='block';
+                clearTimeout(timer)
+            }
+
+            function hide(){
+                timer=setTimeout(function(){
+                    oDiv2.style.display='none';
+                },300)
+            }
+
+            oDiv1.onmouseover=show;
+            oDiv1.onmouseout=hide;
+
+            oDiv2.onmouseover=show;
+            oDiv2.onmouseout=hide;
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2">
+        <ul>
+            <li>1.第三届繁华的世界看得见</li>
+            <li>2.第三届繁华的世界看得见</li>
+            <li>3.第三届繁华的世界看得见</li>
+            <li>4.第三届繁华的世界看得见</li>
+            <li>5.第三届繁华的世界看得见</li>
+        </ul>
+    </div>
+</body>
+</html>

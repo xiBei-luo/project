@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box{
+            width: 120px;
+            text-align: center;
+            border: 1px solid #000;
+            padding: 10px;
+            display: inline-block;
+            margin: 10px;
+        }
+        #content{
+            width: 300px;
+            background: #eee;
+            border: 1px solid red;
+            padding: 10px;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var aBox=document.getElementById('btn'),
+                aImg=aBox.getElementsByTagName('img');
+            var oCont=document.getElementById('content'),
+                oP=oCont.getElementsByTagName('p')[0];
+
+            var i=0;
+            var aDatas=['悟空传》是新丽电影、磨铁娱乐和上海三次元影业联合出品的奇幻电影，由郭子健执导，彭于晏、倪妮、欧豪、余文乐、郑爽、乔杉、杨迪联袂主演，俞飞鸿特别出演。该片改编自今何在同名小说《悟空传》，讲述了五百年前，未成为齐天大圣的孙悟空，不服天命，向天地诸神发起抗争的故事。该片于2017年7月13日在中国内地上映。','《楚乔传》是由慈文传媒旗下蜜淘影业、华策影视集团克顿传媒旗下上海辛迪加影视有限公司联合出品的大型女性励志传奇古装剧。由吴锦源执导，赵丽颖、林更新、窦骁、李沁领衔主演，邓伦、金士杰特邀出演，王彦霖、牛骏峰、黄梦莹、田小洁、孙宁、金瀚、邢昭林、曹曦月、朱圣祎、阮圣文、李若嘉、苗苗等联合出演。','《醉玲珑》是根据作者十四夜同名小说改编的东方奇幻电视剧，由林玉芬、梁胜权、余翠华和任海涛联合执导，刘诗诗、陈伟霆、徐海乔、韩雪、黄梦莹领衔主演，刘奕君、韩栋、曾黎、李呈媛、郑业成特别出演，高一清、龚俊、张赫、季晨、徐嘉苇、汤晶媚、刘颖伦、徐沐婵、马春瑞、毛方圆、苏航、徐剑、杨韬歌等主演。','《捉妖记》是由蓝色星空影业有限公司、安乐影片有限公司、北京数字印象文化传播有限公司等联合出品的一部奇幻电影，该片由许诚毅执导，白百何、井柏然、曾志伟、吴君如、姜武等主演。影片于2015年7月16日以IMAX 3D格式在中国内地公映。影片主要讲述了小伙子天荫阴差阳错地怀上了即将降世的小妖王，他被降妖天师小岚一路保护着躲过各种妖怪。虽然二人渐渐对小妖产生了感情，小岚却明白她只为把这只惹人眼红的小妖卖个好价钱，在人妖混杂的世界里，他们的命运无疑将牵动人心。']
+
+            for(i=0;i<aImg.length;i++){
+                aImg[i].index=i;
+                aImg[i].onmouseover=function(){
+                    oCont.style.display='block';
+                    oP.innerHTML=aDatas[this.index];
+                }
+                aImg[i].onmouseout=function(){
+                    oCont.style.display='none';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="btn">
+    <div id="box">
+        <img src="images/1.jpg">
+        <h3>悟空传</h3>
+        <p>2017年7月26日</p>
+    </div>
+    <div id="box">
+        <img src="images/1.jpg">
+        <h3>猫妖传</h3>
+        <p>2017年7月26日</p>
+    </div>
+    <div id="box">
+        <img src="images/1.jpg">
+        <h3>楚乔传</h3>
+        <p>2017年7月26日</p>
+    </div>
+    <div id="box">
+        <img src="images/1.jpg">
+        <h3>捉妖记</h3>
+        <p>2017年7月26日</p>
+    </div>
+</div>
+    <div id="content">
+        <p></p>
+    </div>
+</body>
+</html>

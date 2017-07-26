@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+        button{
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: relative;
+            top: 200px;
+            left: 60px;
+        }
+        .box{
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .box ul{
+            position: absolute;
+        }
+        .box ul li{
+            float: left;
+            list-style: none;
+            padding-left: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var oUl=oBox.getElementsByTagName('ul')[0];
+            var aLi=document.getElementsByTagName('li');
+            var oBtn1=document.getElementById('prev');
+            var oBtn2=document.getElementById('next');
+            var timer=null;
+            var iSpeed=-5;
+
+
+            oUl.innerHTML+=oUl.innerHTML;
+            oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+
+
+            function move(){
+                oUl.style.left=oUl.offsetLeft+iSpeed+'px';
+                if(oUl.offsetLeft<-oUl.offsetWidth/2){
+                    oUl.style.left='0px';
+                }
+                else if(oUl.offsetLeft>0){
+                    oUl.style.left=-oUl.offsetWidth/2+'px';
+                }
+            }
+
+            timer=setInterval(move,30)
+            
+            oBtn1.onclick=function(){
+                iSpeed=-5;
+            }
+            oBtn2.onclick=function(){
+                iSpeed=5;
+            }
+            oUl.onmouseover=function(){
+                clearInterval(timer);
+            }
+            oUl.onmouseout=function(){
+                timer=setInterval(move,30)
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="box" id="box">
+        <ul>
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+        </ul>
+    </div>
+    <button id="prev">向左</button>
+    <button id="next">向右</button>
+</body>
+</html>
