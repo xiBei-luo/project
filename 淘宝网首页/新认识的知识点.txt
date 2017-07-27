@@ -1,0 +1,7 @@
+background-position:使用在一张png上有多个logo或者icon这个时候就用到background-position了
+	background-position：x  y   x等于平行轴   y等于竖行轴。
+	x y的取值可以为正数，也可以是负数
+
+white-space: nowrap：强制文字不换行
+
+float三栏布局技巧：首尾左右浮动，中间的内容在布局中写在最后自适应
