@@ -5,3 +5,6 @@ background-position:使用在一张png上有多个logo或者icon这个时候就用到background-po
 white-space: nowrap：强制文字不换行
 
 float三栏布局技巧：首尾左右浮动，中间的内容在布局中写在最后自适应
+
+hover的抖动问题：1、调整hover后元素的位置，合理利用负值
+2、
