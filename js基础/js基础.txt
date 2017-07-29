@@ -1,0 +1,40 @@
+1、js的组成：
+  ECMAScript（解释器、翻译）几乎无兼容性问题；
+  DOM；有一些兼容问题
+  BOM；（浏览器）几乎不兼容
+2、变量类型：
+  （1）typeof；（变量内容由其内部存储的内容来决定）
+  （2）number；string；boolean；object；function；undefined（未定义；虽然定义了但是没给值）
+  （3）基本类型：number;string;boolean;undefined
+  （4）复合类型：对象（由基本类型组成）
+3、数据类型转换：
+  强制类型转换：
+    字符串—>数字（parseInt）
+    字符串—>数字（parseFloat）
+  NaN
+  检测NaN：isNaN(值)
+  隐式类型转化：
+    ==:比较时会先把两端的东西转换成同一类型再比较
+    ===:直接比较，不转换
+    -:想减时会把两端转换成数字再减（乘、除同减法）
+4、变量作用域和闭包：
+  （1）局部变量、全局变量
+  （2）闭包（子函数可以使用父函数的局部变量）
+5、break（跳出）continue（跳过）
+6、null—空对象
+7、arguments：参数数组—参数数量不定
+8、获取非行间样式：
+  obj.currentStyle.width（计算后的样式—IE）
+  getComputedStyle（obj,false).width（计算后的样式—FireFox/Chrome）
+9、getStyle函数封装
+10、数组：
+  添加元素：push(尾部)、unshift（头部）
+  删除元素：pop（尾部）、shift(头部)
+  排序：sort
+  连接数组：arr1.concat(arr2)
+  分隔符1：数组变字符串—arr.join('-')以-分隔数组，新生成的是字符串
+  分隔符2：字符串变数组—str.split('-')以-为标识分隔符，将字符串转换为数组
+  全能数组操作：splice（起始位置，长度,新插入的元素）
+    中间删除：arr.splice(2,3)
+    中间插入：arr.splice(2,0,'a','b')
+    替换元素：arr.splice(1,2,'a','b')
