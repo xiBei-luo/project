@@ -434,6 +434,112 @@
 }
 
 
+.u_bnav_box{
+    width: 296px;
+    padding:10px 0;
+}
+.u_bnav_box:last-child{
+    border:none;
+}
+.u_bnav_tit{
+    display: inline-block;
+    margin-left: 20px;
+}
+.u_bnav_list{
+    margin-top: 20px;
+}
+.u_bnav_list li{
+    float: left;
+    padding-left: 24px;
+    line-height: 24px;
+}
+
+
+.g_main{
+    height: auto;
+}
+.g_lm{
+    width: 787px;
+}
+.m_lTable{
+    width: 100%;
+}
+.m_lTable tr:first-child{
+    border:1px solid #000;
+    border-bottom: none;
+}
+.m_lTable tr:first-child th{
+    padding:15px 0;
+    text-align: left;
+    padding-left: 30px;
+}
+.m_lTable tr:first-child th:last-child{
+    text-align: right;
+    padding-right: 30px;
+    font-weight: normal;
+}
+.m_lTable tr td{
+    width: 100px;
+    height: 300px;
+    border:1px solid #000;
+}
+
+.g_rm{
+    width: 374px;
+    border:2px solid #666;
+    background: #f4f4f4;
+    border-right: none;
+    border-bottom: none;
+}
+.m_rw{
+    margin:15px 15px 0 15px;
+}
+.u_point p{
+    line-height: 24px;
+    text-align: right;
+    margin-right: 0px;
+}
+.u_point img{
+    width: 100%;
+    height: 100%;
+    margin:25px auto 0;
+    background-position: center;
+}
+.u_recom_tit{
+    font-size: 14px;
+}
+.u_rebox{
+    border:1px solid #ccc;
+    margin-top: 10px;
+    background: #fff;
+}
+.u_rebox_wrap{
+    margin:14px;
+    margin-bottom: 0;
+    line-height: 30px;
+}
+.u_rebox_wrap span{
+    font-weight: normal;
+}
+.u_reimg li{
+    display: inline-block;
+    margin-right: 16px;
+}
+
+
+
+
+
+
+
+.g_footer{
+    height: 200px;
+    background: pink;
+}
+
+
+
+
 
 
 
@@ -447,12 +553,15 @@ a{color:#000;text-decoration: none;}
 .fr{float: right;}
 .cw{width: 1190px; margin-left: auto;margin-right: auto;}
 .orange{color:#ff4300;}
-.hide{
-    display: none;
-}
+.blue{color:#205F9C}
+.purple{color:#890FA2;}
+.pink{color: #BF2B76}
+.hide{display: none;}
 i{background-image: url(../images/icon.png); background-repeat: no-repeat;}
 em{background-image: url(../images/star.png); background-repeat: no-repeat;}
 .mt30{margin-top: 30px;}
 .mr36{margin-right: 36px;}
 .mb10{margin-bottom: 10px;}
+.mb30{margin-bottom: 30px;}
+.br{border-right: 1px solid #000;}
 
