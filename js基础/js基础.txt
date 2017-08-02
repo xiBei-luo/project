@@ -38,3 +38,31 @@
     中间删除：arr.splice(2,3)
     中间插入：arr.splice(2,0,'a','b')
     替换元素：arr.splice(1,2,'a','b')
+11、DOM：
+  创建元素：var oLi=document.createElement('li');
+	   oLi.innerHTML=oTxt.value;
+	   oUl.appendChild(oLi);
+  insertBefore（插在父级元素最前面）;insertBefore(子节点，谁之前插入)
+  appendChild(追加在父级之后)
+  删除元素：父元素.removeChild()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
