@@ -14,3 +14,21 @@
             堆(heap)：当程序创建一个新对象时，会将这个对象放到堆内存中，堆内存中的对象不会自动销毁。引用变量存储在栈中，
 存储的是指向堆中的数组或者对象的地址（因此修改引用类型总会影响到其他指向这个地址的引用变量）。
   7、RegExp：
+08-03
+  1、toString()  toLocalString()  valueOf()
+    使用方法  arr（数组名）.tostring();
+    所有对象都具有这三种方法;
+    调用数组的toString()和valueOf()会返回相同的值，即数组中各项值以逗号形式分隔；实际上直接alert(arr)，alert接收字符串，
+程序会在后台隐式调用toString方法;
+    toLocalString()是对数组中的每一项都执行toLocalString()方法，toString()和valueOf()是直接对整个数组执行相应的方法;
+
+
+
+
+
+
+
+
+
+
+

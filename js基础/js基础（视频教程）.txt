@@ -1,0 +1,89 @@
+1、js的组成：
+  ECMAScript（解释器、翻译）几乎无兼容性问题；
+  DOM；有一些兼容问题
+  BOM；（浏览器）几乎不兼容
+2、变量类型：
+  （1）typeof；（变量内容由其内部存储的内容来决定）
+  （2）number；string；boolean；object；function；undefined（未定义；虽然定义了但是没给值）
+  （3）基本类型：number;string;boolean;undefined
+  （4）复合类型：对象（由基本类型组成）
+3、数据类型转换：
+  (1)强制类型转换：
+    	字符串—>数字（parseInt）
+    	字符串—>数字（parseFloat）
+  (2)NaN
+  (3)检测NaN：isNaN(值)
+  (4)隐式类型转化：
+    	==:比较时会先把两端的东西转换成同一类型再比较
+    	===:直接比较，不转换
+    	-:相减时会把两端转换成数字再减（乘、除同减法）
+4、变量作用域和闭包：
+  （1）局部变量、全局变量
+  （2）闭包（子函数可以使用父函数的局部变量）
+5、break（跳出）continue（跳过）
+6、null—空对象
+7、arguments：参数数组—参数数量不定
+8、获取非行间样式：
+  	obj.currentStyle.width（计算后的样式—IE）
+  	getComputedStyle（obj,false).width（计算后的样式—FireFox/Chrome）
+9、getStyle函数封装
+10、数组：
+  (1)添加元素：push(尾部)、unshift（头部）
+  (2)删除元素：pop（尾部）、shift(头部)
+  (3)排序：sort
+  (4)连接数组：arr1.concat(arr2)
+  (5)分隔符1：数组变字符串—arr.join('-')以-分隔数组，新生成的是字符串
+  (6)分隔符2：字符串变数组—str.split('-')以-为标识分隔符，将字符串转换为数组
+  (7)全能数组操作：splice（起始位置，长度,新插入的元素）
+    	中间删除：arr.splice(2,3)
+    	中间插入：arr.splice(2,0,'a','b')
+    	替换元素：arr.splice(1,2,'a','b')
+11、DOM：
+  (1)创建元素：var oLi=document.createElement('li');
+	   oLi.innerHTML=oTxt.value;
+	   oUl.appendChild(oLi);
+  (2)insertBefore（插在父级元素最前面）;insertBefore(子节点，谁之前插入);
+  (3)appendChild(追加在父级之后);
+  (4)删除元素：父元素.removeChild();
+  (5)节点：父节点（只有一个—直接父节点）  子节点（只有一层，兼容性问题）；
+  (6)获取元素子节点：childNodes（数组），子节点数组；
+    	注意：FireFox下childNodes个数会把空的节点也算在其中，如换行；  
+    	处理childNodes的兼容性问题：文本节点为3，元素节点为1；无法为纯文本节点添加样式；nodeType获取元素的类型
+      	if(oUl.childNodes[i].nodeType==1){
+		  .........	
+      	}
+   	children（数组）—兼容版的获取子节点
+  (7)获取元素父节点：parentsNode，父节点（父节点只有一个）；
+  	offsetParent:具有定位样式的结构上的父节点（html是最终父节点）
+  (8)获取首尾子节点：firstChild(IE)/firstElementChild(FireFox);lastChild/lastElementChild
+  (9)获取兄弟节点：nextSibling/nextElementSibling;previousSibling/previousElementSibling
+  (10)元素属性的操作：.  ['']   setAttribute('属性名','属性值')   getAttribute('属性名')—>获取属性值
+removeAttribute—>删除属性
+    	oTxt.value='123'  oTxt['value']='123'  oTxt.setAttribute('value','123')  getAttribute('value')
+removeAttribute('value')
+  (11)通过className寻找元素
+12、BOM：
+  
+	
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
