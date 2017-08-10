@@ -1,0 +1,18 @@
+0、基本理论：
+	1.Native App(偏交互、访问硬件、基本稳定、java)
+	2.WEB APP(偏浏览、信息展示、调试中、html5)
+	3.Hybrid APP（混合开发）
+	
+一、像素知识：1.物理像素（dp/pt）和逻辑像素(px)和像素比（dpr）：1px=dpr的平方*dp
+	2.DPI和PPI？
+	3.PPI？
+二、Viewport：缩放
+	1.visual viewport？
+	2.layout viewport？
+三、Viewport标签:
+	<meta name="viewport" content="name=value name=value....">
+	参数:width:设置布局viewport的特定值  width=device-width
+	innitial-scale:设置页面的初始缩放  initial-scale=1.0
+	minimum-scale：最小缩放
+	maximum-scale：最大缩放  maximum-scale=1.0
+	user-scalable:用户能否缩放  user-scalable=no
