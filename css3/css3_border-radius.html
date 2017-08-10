@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .circle{
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+        .halfcir{
+            width: 100px;
+            height: 50px;
+            background: pink;
+            border-radius: 50px 50px 0 0;
+        }
+        .qurcir{
+            width: 50px;
+            height: 50px;
+            background: green;
+            border-radius: 50px 0 0 0;
+            margin: 100px;
+        }
+        .oval{
+            width: 100px;
+            height: 50px;
+            border-radius: 100px/50px;
+            background: blue;
+        }
+        .oval_t{
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background: yellow;
+            border-radius: 30px 40px 50px 60px /60px 50px 40px 30px;
+        }
+        .oval_f{
+            width: 200px;
+            height: 100px;
+            border: 10px solid #000;
+            border-radius: 15px;
+            /* 内圆角与外圆角 */
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="halfcir"></div>
+    <div class="qurcir"></div>
+    <div class="oval"></div>
+    <div class="oval_t"></div>
+    <div class="oval_f"></div>
+</body>
+</html>
