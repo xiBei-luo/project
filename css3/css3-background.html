@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            width: 300px;
+            height: 200px;
+            border: 20px dashed rgba(0, 0, 0, 0.3);
+            background: orange url('2.jpg') no-repeat;
+            padding: 20px;
+            margin: 30px;
+            display: inline-block;
+        }
+        .paddingbox{
+            -moz-background-origin: padding-box;
+            background-origin: padding-box;
+        }
+        .borderbox{
+            -moz-background-origin: border-box;
+            background-origin: border-box;
+        }
+        .contentbox{
+            -moz-background-origin: content-box;
+            background-origin: content-box;
+        }
+        .box2{
+            width: 300px;
+            height: 100px;
+            border: 20px dashed rgba(0, 0, 0, 0.8);
+            background: rgba(0, 25, 25, 0.8) url('4.jpg') no-repeat;
+            padding: 30px;
+            margin: 20px;
+            display: inline-block;
+        }
+        .borderbox2{
+            -moz-background-clip: border-box;
+            background-clip: border-box;
+        }
+        .paddingbox2{
+            -moz-background-clip: padding-box;
+            background-clip: padding-box;
+        }
+        .contentbox2{
+            -moz-background-clip: content-box;
+            background-clip: content-box;
+        }
+        .back{
+            width: 250px;
+            height: 200px;
+            border: 1px solid red;
+            display: inline-block;
+            background: url('2.jpg') no-repeat;
+        }
+        .back1{
+            background-size: auto;
+        }
+        .back2{
+            background-size: 100px 100px;
+        }
+        .back3{
+            background-size: 80% 80%;
+        }
+        /* 相对于元素宽度计算百分比 */
+        .back4{
+            background-size: cover;
+        }
+        .back5{
+            background-size: contain;
+        }
+        .demo{
+            width: 240px;
+            border: 20px solid rgba(104, 104, 142, 0.5);
+            border-radius: 10px;
+            padding: 80px 60px;
+            color: #f36;
+            font-size: 25px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .backimgs{
+            background: url('2.jpg') no-repeat left top,
+                        url('2.jpg') no-repeat right top,
+                        url('2.jpg') no-repeat left bottom,
+                        url('2.jpg') no-repeat right bottom,
+                        url('2.jpg') no-repeat;
+            -moz-background-origin: border-box,border-box,border-box,border-box;
+            background-origin: border-box,border-box,border-box,border-box;
+
+            -moz-background-clip: border-box;
+            background-clip: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box paddingbox"></div>
+    <div class="box borderbox"></div>
+    <div class="box contentbox"></div>
+
+    <div class="box2 borderbox2"></div>
+    <div class="box2 paddingbox2"></div>
+    <div class="box2 contentbox2"></div>
+
+    <div class="back back1"></div>
+    <div class="back back2"></div>
+    <div class="back back3"></div>
+    <div class="back back4"></div>
+    <div class="back back5"></div>
+
+    <div class="demo backimgs">css3多背景</div>
+</body>
+</html>
