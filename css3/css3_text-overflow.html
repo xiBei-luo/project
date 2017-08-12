@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .text_overflow{
+            width: 100px;
+            padding: 10px;
+            border:1px solid #ccc;
+
+            text-overflow: clip;
+            
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="text_overflow">
+        文本直接裁切，需要配合white-space: nowrap;overflow: hidden;一起使用
+    </div>
+    <p>文本直接裁切，需要配合white-space: nowrap;overflow: hidden;一起使用</p>
+</body>
+</html>
