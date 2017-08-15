@@ -63,6 +63,12 @@ removeAttribute—>删除属性
 removeAttribute('value')
   (11)通过className寻找元素
 12、BOM：
+13、正则表达式：
+	（1）复习常用字符串操作方法：
+		search
+		substring
+		charAt
+		split
   
 	
     
