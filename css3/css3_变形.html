@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background: red;
+            margin: 10px;
+            transition: all 0.8s;
+            position: relative;
+        }
+        .box1:hover{transform: rotate(90deg) scale(1.5)}
+        .box2:hover{transform: rotate(-90deg) scale(.5)}
+        .box3:hover{transform: translate(200px, 200px) scale(1.5)}
+        .box4:hover{transform: rotate(360deg) scale(2,3)}
+        .box5:hover{transform: skew(30deg,20deg)}
+    </style>
+</head>
+<body>
+    <div class="box box1">思考角度看</div>
+    <div class="box box2">思考</div>
+    <div class="box box3">思考</div>
+    <div class="box box4">思考</div>
+    <div class="box box5">思考</div>
+</body>
+</html>
