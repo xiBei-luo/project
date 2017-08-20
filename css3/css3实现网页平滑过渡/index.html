@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin+Slab:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="st-container">
+            <input type="radio" name="radio-set" checked="checked" id="st-control-1">
+            <a href="#st-panel-1">serendipity</a>
+            <input type="radio" name="radio-set" id="st-control-2">
+            <a href="#st-panel-2">happiness</a>
+            <input type="radio" name="radio-set" id="st-control-3">
+            <a href="#st-panel-3">tranquillity</a>
+            <input type="radio" name="radio-set" id="st-control-4">
+            <a href="#st-panel-4">positivity</a>
+            <input type="radio" name="radio-set" id="st-control-5">
+            <a href="#st-panel-5">passionery</a>
+            <div class="st-scroll">
+                <section class="st-panel" id="st-panel-1">
+                    <div class="st-desc" data-icon="H"></div>
+                    <h2>serendipity</h2>
+                    <p>ksjd lskdls slkds skjdks ,kgjh sjhdsj sjksa 
+                    sjdhj sjdhsj dkgj sdir.</p>
+                </section>
+                <section class="st-panel st-color" id="st-panel-2">
+                    <div class="st-desc" data-icon="2"></div>
+                    <h2>happiness</h2>
+                    <p>ksjd lskdls slkds skjdks ,kgjh sjhdsj sjksa 
+                    sjdhj sjdhsj dkgj sdir.</p>
+                </section>
+                <section class="st-panel" id="st-panel-3">
+                    <div class="st-desc" data-icon="B"></div>
+                    <h2>tranquillity</h2>
+                    <p>ksjd lskdls slkds skjdks ,kgjh sjhdsj sjksa 
+                    sjdhj sjdhsj dkgj sdir.</p>
+                </section>
+                <section class="st-panel st-color" id="st-panel-4">
+                    <div class="st-desc" data-icon="A"></div>
+                    <h2>positivity</h2>
+                    <p>ksjd lskdls slkds skjdks ,kgjh sjhdsj sjksa 
+                    sjdhj sjdhsj dkgj sdir.</p>
+                </section>
+                <section class="st-panel" id="st-panel-5">
+                    <div class="st-desc" data-icon="&"></div>
+                    <h2>passionery</h2>
+                    <p>ksjd lskdls slkds skjdks ,kgjh sjhdsj sjksa 
+                    sjdhj sjdhsj dkgj sdir.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- 问题：火狐中标题和内容动画效果有抖动，谷歌中没有 -->
+
+
+
+
+    <!-- 笔记：
+    1、选中当前点击项的样式设置——UI状态伪类选择器（利用单选按钮）
+            .st-container input:checked
+    2、隐藏元素：  display: none;隐藏不占位
+                visibility: hidden;隐藏占位 
+                opacity: 0;
+    3、制作三角形并设置位置
+    .st-container input:checked+a:after{
+        content: "";
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        border:20px solid transparent;
+        border-bottom-color:#821134;
+        position: absolute;
+        bottom: 100%; 
+        left: 50%;
+        margin-left: -20px;
+    }
+    4、处理滑过当前选中项时，不变颜色
+    .st-container input:checked:hover+a{
+        background: #821134;
+    }
+    5、设置字体的平滑度
+    -webkit-font-smoothing: antialiased;
+    6、引入字体，光应用还不能真正显示；在需要引用的地方加上font-family:"raphaelicons";才可以真正使用
+    字体网址：http://www.dafont.com/
+    @font-face{
+            font-family:"raphaelicons";
+            src:url(fonts/raphaelicons-webfont.eot) format('eot'),
+                url(fonts/raphaelicons-webfont.svg) format('svg'),
+                url(fonts/raphaelicons-webfont.ttf) format('truetype'),
+                url(fonts/raphaelicons-webfont.woff) format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    8、transition和animation的区别：
+        transition：需要事件触发，比如点击，滑过
+        animation：不需要事件触发,直接播放
+     -->
+</body>
+</html>
