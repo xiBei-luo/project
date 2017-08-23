@@ -62,7 +62,7 @@ a:link,a:visited{
     position: relative;
     z-index: 999;
 }
-/*气泡*/
+/*气泡的公共初始状态*/
 .tooltip-content{
     position: absolute;
     z-index: 9999;
@@ -84,7 +84,7 @@ a:link,a:visited{
     -ms-transition:all 0.3s ease-in-out;
     transition:all 0.3s ease-in-out;
 }
-/*气泡中的小图标*/
+/*气泡中的小图标的公共初始状态状态*/
 .tooltip .tooltip-content i{
     opacity: 0;
     -webkit-transition:all 0.3s ease-in-out;
@@ -117,20 +117,11 @@ a:link,a:visited{
     transition:all 0.3s;
 }
 
-/*气泡图标的最终状态*/
-.tooltip:hover .tooltip-content,
-.tooltip:hover .tooltip-content i{
-    opacity: 1;
-    -webkit-transform:translate3d(0,0,0) rotate3d(1,1,1,0);
-    -moz-transform:translate3d(0,0,0) rotate3d(1,1,1,0);
-    -o-transform:translate3d(0,0,0) rotate3d(1,1,1,0);
-    -ms-transform:translate3d(0,0,0) rotate3d(1,1,1,0);
-    transform:translate3d(0,0,0) rotate3d(1,1,1,0);
-}
+
 
 /*各个图标出现的不同形式状态*/
 
-/*1气泡的变化状态*/
+/*1气泡单独的初始状态*/
 .tooltip-effect-1 .tooltip-content{
     -webkit-transform:translate3d(0,10px,0) rotate3d(1,1,1,45deg);
     -moz-transform:translate3d(0,10px,0) rotate3d(1,1,1,45deg);
@@ -143,7 +134,7 @@ a:link,a:visited{
     -ms-transform-origin:bottom;
     transform-origin:bottom;
 }
-/*1气泡内图标的变化状态*/
+/*1气泡内图标单独的初始状态*/
 .tooltip-effect-1 .tooltip-content i{
     -webkit-transform:scale3d(0,0,1);
     -moz-transform:scale3d(0,0,1);
@@ -160,9 +151,68 @@ a:link,a:visited{
     transform:translate3d(0,20px,0);
 }
 .tooltip-effect-2 .tooltip-content i{
-    -webkit-transform:translate3d(0,15px);
-    -moz-transform:translate3d(0,15px);
-    -o-transform:translate3d(0,15px);
-    -ms-transform:translate3d(0,15px);
-    transform:translate3d(0,15px);
+    -webkit-transform:translate3d(0,15px,0);
+    -moz-transform:translate3d(0,15px,0);
+    -o-transform:translate3d(0,15px,0);
+    -ms-transform:translate3d(0,15px,0);
+    transform:translate3d(0,15px,0);
+}
+/*3*/
+.tooltip-effect-3 .tooltip-content{
+    -webkit-transform: translate3d(0,10px,0) rotate3d(0,1,0,90deg);
+    -moz-transform: translate3d(0,10px,0) rotate3d(0,1,0,90deg);
+    -o-transform: translate3d(0,10px,0) rotate3d(0,1,0,90deg);
+    -ms-transform: translate3d(0,10px,0) rotate3d(0,1,0,90deg);
+    transform: translate3d(0,10px,0) rotate3d(0,1,0,90deg);
+    -webkit-transform-origin:bottom;
+    -moz-transform-origin:bottom;
+    -o-transform-origin:bottom;
+    -ms-transform-origin:bottom;
+    transform-origin:bottom;
+}
+.tooltip-effect-3 .tooltip-content i{
+    -webkit-transform:scale3d(0.01,0.01,1);
+    -moz-transform:scale3d(0.01,0.01,1);
+    -o-transform:scale3d(0.01,0.01,1);
+    -ms-transform:scale3d(0.01,0.01,1);
+    transform:scale3d(0.01,0.01,1)
+}
+/*4*/
+.tooltip-effect-4 .tooltip-content{
+    -webkit-transform: translate3d(0,-20px,0);
+    -moz-transform: translate3d(0,-20px,0);
+    -o-transform: translate3d(0,-20px,0);
+    -ms-transform: translate3d(0,-20px,0);
+    transform: translate3d(0,-20px,0);
+}
+.tooltip-effect-4 .tooltip-content i{
+    -webkit-transform: translate3d(0,20px,0);
+    -moz-transform: translate3d(0,20px,0);
+    -o-transform: translate3d(0,20px,0);
+    -ms-transform: translate3d(0,20px,0);
+    transform: translate3d(0,20px,0);
+}
+/*5*/
+.tooltip-effect-5 .tooltip-content{
+   -webkit-transform:scale3d(0.01,0.01,1);
+    -moz-transform:scale3d(0.01,0.01,1);
+    -o-transform:scale3d(0.01,0.01,1);
+    -ms-transform:scale3d(0.01,0.01,1);
+    transform:scale3d(0.01,0.01,1);
+}
+
+
+
+
+
+
+/*气泡图标的最终状态——都是正视角显示在文字的上面*/
+.tooltip:hover .tooltip-content,
+.tooltip:hover .tooltip-content i{
+    opacity: 1;
+    -webkit-transform:translate3d(0,0,0) rotate3d(1,1,1,0) scale3d(1,1,1);
+    -moz-transform:translate3d(0,0,0) rotate3d(1,1,1,0) scale3d(1,1,1);
+    -o-transform:translate3d(0,0,0) rotate3d(1,1,1,0) scale3d(1,1,1);
+    -ms-transform:translate3d(0,0,0) rotate3d(1,1,1,0) scale3d(1,1,1);
+    transform:translate3d(0,0,0) rotate3d(1,1,1,0) scale3d(1,1,1);
 }
