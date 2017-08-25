@@ -245,6 +245,7 @@ body{
     width: 100%;
     height: 180px;
     background: #e8e8e8;
+    clear: both;
 }
 .copyright_content{
     width: 1000px;
@@ -267,20 +268,97 @@ body{
     text-decoration: none;
     color:#4E4E4E;
 }
-
-
-
-
-
-
-
-
-.clearfix:after {
-  content: " ";
-  display: block;
-  clear: both;
-  height: 0;
+.list_main{
+    min-height: 350px;
+    background: #fff;
+    margin-top: 10px;
 }
-.clearfix {
-  zoom: 1;
+.list_type{
+    width: 220px;
+    height: 350px;
+    border:1px solid #e8e8e8;
+    float: left;
 }
+.list_box{
+    width: 770px;
+    min-height: 350px;
+    border:1px solid #e8e8e8;
+    float: right;
+    background: #fff;
+}
+.list_type h2,
+.list_box h2{
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    color:#666;
+    background: url(../images/titile_bg.gif) repeat-x;
+    padding-left: 20px;
+}
+.new_type_content{
+    height: 365px;
+    background: url(../images/content_bg.gif) repeat-x;
+}
+.new_type_content ul{
+    padding-left: 15px;
+}
+.new_type_content li{
+    list-style: none;
+    height: 30px;
+    line-height: 30px;
+}
+.new_type_content a{
+    color:#666;
+    text-decoration: none;
+    background: url(../images/li_bg.gif) no-repeat left center;
+    padding-left: 15px;
+    display: block;
+}
+.new_type_content a:hover{
+    color:#009cdf;
+    background: url(../images/li_bg2.gif) no-repeat left center;
+    background-color: #f2f2f2;
+}
+.page{
+    height: 40px;
+    margin-top: 20px;
+    text-align: center;
+}
+.page a{
+    text-decoration: none;
+    border:1px solid #e8e8e8;
+    margin:5px;
+    padding:5px 10px;
+    display: inline-block;
+}
+
+.page a:hover,
+.page a:active{
+    color:#000;
+    background: #cc1b1b;
+}
+.list_box h1{
+    font-family: "微软雅黑";
+    font-size: 20px;
+    text-align: center;
+    margin:15px 0;
+}
+.list_box_newsInfo{
+    color: #666;
+    text-align: center;
+    border-bottom: 1px dotted #666;
+}
+.list_box_newsContent{
+    font-size: 14px;
+    padding: 20px;
+    line-height: 25px;
+    text-indent: 2em;
+}
+
+
+
+
+
+
+
