@@ -1,0 +1,32 @@
+1、前端JS框架介绍
+http://www.cnblogs.com/jasmine1314/p/5809444.html
+2、jq  中文API文档
+http://jquery.cuishifeng.cn/
+3、github使用
+http://blog.csdn.net/lvkelly/article/details/54668378(更新)
+http://www.fx114.net/qa-19-152378.aspx（添加）
+http://blog.csdn.net/Javanjg/article/details/54688417(删除)
+4、github仓库地址
+git@github.com:xiBei-luo/js_study.git
+github帐号密码：1271826981@qq.com    lwy950801.
+
+5、http://jquery.cuishifeng.cn/
+jq中文API
+6.http://hemin.cn/jq/
+jq速查表
+7.https://git-scm.com/book/zh/v2
+（git学习）
+8.https://www.w3cplus.com/blog/position-and-z-index.html 
+ position定位问题
+9.https://www.w3cplus.com/blog/tags/427.html  
+ 详解z-index
+10.https://www.w3cplus.com/blog/tags/288.html  
+ css选择器
+11.http://www.cnblogs.com/bekeyuan123/p/6734360.html
+ (DOM)
+12.https://www.w3cplus.com/content/css3-transform
+（页面底部有多个学习链接）
+13.http://blog.jobbole.com/78960/（git版本控制—毕业论文使用）
+14.https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000（廖雪峰js学习网址）
+
+
