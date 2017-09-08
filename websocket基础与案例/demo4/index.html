@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Websocket</title>
+</head>
+<body>
+    <h1>Chat Room</h1>
+    <input type="text" id="sendTxt">
+    <button id="sendBtn">发送</button>
+
+    <script>
+        var Websocket=new WebSocket("ws://localhost:3000/");
+        function showMessage(str,type){
+            var div=document.createElement('div');
+            div.innerHTML=str;
+            if(type=="enter"){
+                div.style.color="blue";
+            }else if(type=="leave"){
+                div.style.color="red";
+            }
+            document.body.appendChild(div);
+        }//接收需要显示的信息，新建一个div然后根据相应的状态显示不同的颜色属性
+        Websocket.onopen=function(){
+            console.log('websocket open');//用户浏览器控制台显示
+            document.getElementById("sendBtn").onclick=function(){
+                var txt=document.getElementById("sendTxt").value;
+                if(txt){
+                    Websocket.send(txt);
+                }
+            }
+        }//Websocket.onopen，Websocket事件，连接建立时触发
+        Websocket.onclose=function(){
+            console.log('websocket close');//用户浏览器控制台显示
+        }//Websocket.onclose，Websocket事件，连接关闭时触发
+        Websocket.onmessage=function(e){
+            console.log(e.data);
+            var mes=JSON.parse(e.data);
+            showMessage(mes.data,mes.type);
+        }//Websocket.onmessage，Websocket事件，客户端接收服务端数据时触发
+
+    </script>
+</body>
+</html>
