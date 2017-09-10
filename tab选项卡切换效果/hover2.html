@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 12px;
+        }
+        .notice{
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 30px auto;
+        }
+        .notice_tit{
+            width: 100%;
+            height: 28px;
+            background: #eee;
+            /* 让第一个左边框和最后一个的右边框溢出，通过设置父盒子的overflow:hidden从而达到让第一个左边框和最后一个的右边框隐藏的效果 */
+            overflow: hidden;
+        }
+        .notice_tit ul{
+            width: 302px;
+            margin-left: -1px;
+        }
+        .notice_tit ul li{
+            width: 20%;
+            float: left;
+            text-align: center;
+            line-height: 28px;
+        }
+        .notice_tit ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        .notice_tit ul li a:hover{
+            font-weight: bold;
+        }
+        .select{
+            display: block;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            color: orange;
+            background: #fff;
+            box-sizing: border-box;
+            /* 让第一个左边框和最后一个的右边框溢出，通过设置父盒子的overflow:hidden从而达到让第一个左边框和最后一个的右边框隐藏的效果 */
+            margin: 0 -1px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var oBox=document.getElementById('notice_tit'),
+                aBtn=oBox.getElementsByTagName('a'),
+                i=0;
+
+            for(i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i].onmouseover=function(){
+                    for(i=0;i<aBtn.length;i++){
+                        aBtn[i].className='none';
+                    }
+                    this.className='select';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="notice" class="notice">
+        <div id="notice_tit" class="notice_tit">
+            <ul>
+                <li><a href="#">公告</a></li>
+                <li><a href="#" class="select">规则</a></li>
+                <li><a href="#">论坛</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">联系</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
