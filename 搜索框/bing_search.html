@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bing search</title>
+    <style type="text/css">
+        body{
+            background: #333;
+            font-size: 14px;
+        }
+        form{
+            background: #fff;
+            float: left;
+            padding: 5px;
+        }
+        .search_txt,.search_btn{
+            border: 0;
+        }
+        .search_txt{
+            float: left;
+            height: 25px;
+            line-height: 25px;
+            outline: none;
+            width: 350px;
+            font-size: 16px;
+        }
+        .search_btn{
+            width: 29px;
+            height: 29px;
+            background: red;
+            float: left;
+        }
+        .clear{
+            clear: both;
+        }
+        .suggest{
+            width: 389px;
+            background: #fff;
+            border: 1px solid #999;
+            display: none;
+        }
+        .suggest ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .suggest ul li{
+            padding: 3px;
+            font-size: 14px;
+            line-height: 25px;
+            cursor: pointer;
+        }
+        .suggest ul li:hover{
+            background: #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" name="" class="search_txt" id="search_txt">
+        <input type="submit" value="" name="" class="search_btn">
+    </form>
+
+    <div class="clear"></div>
+
+    <div class="suggest" id="search_suggest">
+        <ul>
+            <li>搜索结果1</li>
+            <li>搜索结果2</li>
+            <li>搜索结果3</li>
+        </ul>
+    </div>
+
+
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $('#search_txt').bind('keyup',function(){
+            var searchTxt=$('#search_txt').val();
+            $('#search_suggest').show();
+        })
+    </script>
+</body>
+</html>
