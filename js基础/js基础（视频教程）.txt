@@ -69,8 +69,43 @@ removeAttribute('value')
 		substring
 		charAt
 		split
-  
-	
+14、Ajax：
+  Ajax的核心是XMLHttpRequest（XHR）对象；
+  XHR对象的属性包括：requestTex（被返回的内容）、responseXML、status（http请求状态）、statusText（状态说明）、readystate（请求相应的活动过程阶段）
+  XHR对象的方法包括：open（“请求类型”，“URL”，“是否异步”）——启动一个请求以备发送、send（null）——发送请求、setRequestHeader（自定义请求头部信息）、getRequestHeader（取得相应的相应头部信息）、getAllRequestHeader（取得包含所有头部信息的长字符串）
+  创建一个XHR请求：创建XMLHttpRequest对象（兼容性）——启动一个请求以备用（open）——创建readystatuchange事件——检查请求状态——执行请求成功后需要完成的事件——发送请求（send）
+function addNj(){
+var xbname=document.getElementById('xb1').value;
+ if(window.XMLHttpRequest)
+    {
+        xmlhttp = new XMLHttpRequest();
+    }
+    else if (window.ActiveXObject)
+    {
+        try
+        {
+            xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch (e)
+        {
+            try
+            {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e)
+            {
+            }
+        }
+    }
+xmlhttp.open('GET','findnj.php?xbname='+xbname,true);
+xmlhttp.onreadystatechange=function(){
+if(xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+      addSelectGroup("nj1",xmlhttp.responseText);
+    }
+}
+xmlhttp.send(null);
+}
     
   
 
