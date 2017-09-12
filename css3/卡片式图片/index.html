@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 16px;
+        }
+        .box{
+            width: 275px;
+            height: 300px;
+            margin: 30px auto;
+        }
+        .img{
+            position: relative;
+            background: url('5.jpg') no-repeat center center;
+            width: 275px;
+            height: 185px;
+        }
+        .img:hover{
+            -moz-transform: scale(1,1,0.5) rotateZ(0deg);
+            transform: scale(1,1,0.5) rotateZ(0deg);
+            box-shadow: 1px -1px 3px #ccc;
+        }
+        .img span{
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            color: #fff;
+            background: rgba(0, 0, 0,0.3);
+            border: 1px solid #fff;
+            border-radius: 15px;
+            padding: 2px 8px;
+            font-size: 14px;
+        }
+        .info{
+            border: 1px solid #eee;
+            padding: 5px 10px;
+
+        }
+        .info_top a{
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .info_bottom{
+            margin-top: 15px;
+            position: relative;
+        }
+        .info_bottom span:first-child{
+            color: #636363;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .info_bottom span:last-child{
+            font-size: 12px;
+            color: #999;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img">
+            <!-- <img src="5.jpg" width="275" height="185"> -->
+            <span>折扣</span>
+        </div>
+        <div class="info">
+            <div class="info_top">
+                <a href="#">北京往返建钢6天4晚自由行（赠两日精华游）</a>
+            </div>
+            <div class="info_bottom">
+                <span>北京</span>
+                <span>674765人浏览过</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
