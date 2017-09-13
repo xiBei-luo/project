@@ -1,0 +1,57 @@
+.box{
+    width: 674px;
+    height: 379px;
+    margin:30px auto 0;
+    position: relative;
+    /* overflow: hidden; */
+}
+.box_list{
+    position: absolute;
+}
+.box a{
+    width: 50px;
+    height: 50px;
+    background: red;
+    position: absolute;
+    display: block;
+    top:50%;
+    margin-top: -25px;
+    text-align: center;
+    line-height: 50px;
+    color:#000;
+    text-decoration: none;
+    z-index: 9999;
+}
+.box a:last-child{
+    right:0;
+}
+.box_point{
+    position: absolute;
+    bottom:5px;
+    left: 50%;
+    margin-left: -50px;
+}
+.box_point li{
+    width: 15px;
+    height: 15px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-left:5px;
+    display: inline-block;
+}
+.box_point li:first-child{
+    background: red;
+}
+
+
+
+
+
+.box img{
+    width: 674px;
+    height: 379px;
+}
+.box ul li{
+    float: left;
+    display: inline-block;
+}
