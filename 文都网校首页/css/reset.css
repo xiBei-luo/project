@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-size: 16px;
 }
 ol, ul {
 	list-style: none;
@@ -56,4 +57,8 @@ table {
 }
 .clearfix{
 	*zoom:1;
+}
+a{
+	color:#000;
+	text-decoration: none;
 }
