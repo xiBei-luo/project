@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .btn{
+            width: 280px;
+            margin-top: 100px;
+            background: rgba(0, 0, 0, 0.5)
+        }
+        .btn li{
+            width: 280px;
+            text-align: center;
+            line-height: 60px;
+            border-bottom: 1px solid #fff;
+            position: relative;
+        }
+        .hide{
+            position: absolute;
+            width: 340px;
+            height: 450px;
+            background: red;
+            left: 280px;
+            top: -30px;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        li:hover,li:hover .hide{
+            background: red;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        <ul>
+            <li>港澳台
+                <div class="hide one">
+                    <h1>香港，澳门</h1>
+                    <p>香港澳门台湾三亚成都重庆武汉</p>
+                </div>
+            </li>
+            <li>东南亚
+                <div class="hide two">
+                    <h1>香港，澳门</h1>
+                    <p>香港澳门台湾三亚成都重庆武汉</p>
+                </div>
+            </li>
+            <li>欧美洲
+                <div class="hide th">
+                    <h1>香港，澳门</h1>
+                    <p>香港澳门台湾三亚成都重庆武汉</p>
+                </div>
+            </li>
+            <li>大洋洲
+                <div class="hide fo">
+                    <h1>香港，澳门</h1>
+                    <p>香港澳门台湾三亚成都重庆武汉</p>
+                </div>
+            </li>
+            <li>个性推荐
+                <div class="hide fi">
+                    <h1>香港，澳门</h1>
+                    <p>香港澳门台湾三亚成都重庆武汉</p>
+                </div>
+            </li>
+            <li>日韩
+                <div class="hide six">
+                    <h1>香港，澳门</h1>
+                    <p>香港澳门台湾三亚成都重庆武汉</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
