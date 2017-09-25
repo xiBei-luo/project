@@ -24,6 +24,10 @@ window.onload=function(){
                 aPiont[i].style.background="#ccc";
             }
             this.style.background="red";
+            oList.style.left=-this.index*aList[0].offsetWidth+'px';
+        }
+        next.onclick=function(){
+            oList.style.left=-aList[0].offsetWidth+'px';
         }
     }       
 }
