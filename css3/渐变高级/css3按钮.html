@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: #f05555;
+        }
+        .box{
+            width: 660px;
+            margin: 0px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .box li{
+            padding: 20px 35px;
+            background: #fff;
+            font-size: 22px;
+            color: #f05555;
+            flex: auto;
+            margin:10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .active{
+            opacity: .6;
+            transform:scale(1.1);
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var aLi=oBox.getElementsByTagName('li');
+
+
+            function hide(){
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].className='';
+                }
+            }
+
+
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onmouseover=function(){
+                    hide();
+                    this.className='active';
+                }
+                aLi[i].onmouseout=function(){
+                    hide();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul class="box" id="box">
+            <li>Lorem</li>
+            <li>Dolor</li>
+            <li>Repellet</li>
+            <li>Quidquam</li>
+            <li>Quidem</li>
+            <li>Quae</li>
+            <li>Maiores</li>
+            <li>Suscipit</li>
+            <li>Minima</li>
+            <li>Aliqua</li>
+            <li>Sapient</li>
+            <li>Sequi</li>
+            <li>Sit</li>
+            <li>Molestias</li>
+            <li>Neque</li>
+            <li>Deleniti</li>
+            <li>Sint</li>
+            <li>Id</li>
+            <li>Facilis</li>
+            <li>Facere</li>
+        </ul>
+    </div>
+
+    
+</body>
+</html>
