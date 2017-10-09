@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .control .t{
+            width: 80px;
+            height: 20px;
+            background: #666;
+            position: absolute;
+            left: 50%;
+            margin-left: -40px;
+            z-index: 1;
+        }
+        .control .b{
+            width: 15px;
+            height: 100px;
+            background: #999;
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            margin-left: -8px;
+            z-index: 1;
+        }
+        .box{
+            width: 40px;
+            height: 200px;
+            border: 5px solid #ccc;
+            position: relative;
+            left: 50%;
+            top: 120px;
+            margin-left: -23px;
+            z-index: 999;
+            background: #fff;
+        }
+        .box span{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            position: absolute;
+            background: red;
+            top: 0;
+            left: 0;
+        }
+        .bottom{
+            width: 100%;
+            height: 333px;
+            background: #333;
+            position: absolute;
+            bottom: 0;
+            z-index: 999;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload=function(){
+            var oControl=document.getElementById('control');
+            var oT=document.getElementById('t');
+            var oB=document.getElementById('b');
+            var oBox=document.getElementById('box');
+            var oSpan=oBox.getElementsByTagName('span')[0];
+            var oTxt=document.getElementById('txt');
+            var timer=null;
+
+
+            timer=setInterval(function(){
+                var sTop=oSpan.offsetTop;
+
+                if(sTop>=oSpan.offsetHeight){
+                    sTop=oSpan.offsetHeight;
+                }
+                else{
+                    oSpan.style.top=sTop+1+'px';
+                    oTxt.value=oSpan.style.top;
+                }
+            },30);
+            
+
+            
+
+            oT.onmousedown=function(ev){
+                var oEvent=ev||event;
+                disY=oEvent.clientY-oT.offsetTop;
+
+                document.onmousemove=function(ev){ 
+
+
+                    clearInterval(timer);
+                    timer=setInterval(function(){
+                        var sTop=oSpan.offsetTop;
+                        if(sTop<=0){
+                            sTop=0;
+                        }
+                        else{
+                            oSpan.style.top=sTop-1+'px';
+                            oTxt.value=oSpan.style.top;
+                        }
+                    },30);
+
+
+                    var oEvent=ev||event;
+                    var t=oEvent.clientY-disY;
+                    if(t<0){
+                        t=0;
+                    }
+                    else if(t>oB.offsetHeight){
+                        t=oB.offsetHeight;
+                    }
+                    oT.style.left=oT.offsetLeft+40+'px';
+                    oT.style.top=t+'px';
+                    oB.style.top=t+20+'px';
+                }
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                    clearInterval(timer);
+                    timer=setInterval(function(){
+                        var sTop=oSpan.offsetTop;
+
+                        if(sTop>=oSpan.offsetHeight){
+                            sTop=oSpan.offsetHeight;
+                        }
+                        else{
+                            oSpan.style.top=sTop+1+'px';
+                            oTxt.value=oSpan.style.top;
+                        }
+                    },100);
+                }
+                return false;
+            }
+
+            
+
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="cont">
+        <div class="control" id="control">
+            <div class="t" id="t"></div>
+            <div class="b" id="b"></div>
+        </div>
+        <div class="box" id="box">
+            <span></span>
+        </div>
+    </div>
+
+    <input type="text" id="txt" name="">
+
+    <div class="bottom"></div>
+</body>
+</html>
