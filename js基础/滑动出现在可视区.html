@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .banner{
+            width: 100%;
+            height: 600px;
+            background-image: linear-gradient(to left,#5CA78B,#43A7AA);
+            position: relative;
+            overflow: hidden;
+        }
+        .banner_circle,.banner_wrap,.p,.r_img,.main ul li{
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+        }
+        .banner_circle{
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+            transform:scale3d(0.01,0.01,1);
+        }
+        .banner_circle_show{
+            opacity: 1;
+            transform:scale3d(1,1,1);
+        }
+        .banner_wrap{
+            width: 600px;
+            height: 150px;
+            background: #097374;
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            margin-left: -300px;
+        }
+        .banner_wrap_show{
+            opacity: 1;
+            bottom:0;
+        }
+        .cont{
+            width: 1200px;
+            height: 400px;
+            margin: 120px auto 0;
+        }
+        .l_desc{
+            width: 550px;
+            height: 400px;
+            background: #52d3aa;
+            float: left;
+            position: relative;
+        }
+        .p{
+            color: #828282;
+            font-size: 14px;
+            line-height: 28px;
+            text-indent: 2em;
+            text-align: right;
+            padding: 100px 20px 0 0;
+            position: absolute;
+            left: -200px;
+            right: 200px;
+        }
+        .l_desc_p_show{
+            left: 0;
+            right: 0;
+            opacity: 1;
+        }
+        .r_img{
+            float: right;
+            width: 550px;
+            height: 400px;
+            background: #000;
+            border-radius: 12px;
+        }
+        .r_img_show{
+            opacity: 0.7
+        }
+        .main{
+            width: 100%;
+            height: 600px;
+            background: #109070;
+            margin-top: 120px;
+            display: flex;
+            margin-bottom: 50px;
+        }
+        .main ul{
+            width: 1200px;
+            height: 500px;
+            margin: 50px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+        .main ul li{
+            width: 150px;
+            height: 150px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            display: inline-block;
+            align-self: center;
+        }
+        .main ul .li_show{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner_circle" id="banner_circle"></div>
+        <div class="banner_wrap" id="banner_wrap"></div>
+    </div>
+
+    <div class="cont">
+        <div class="l_desc" id="l_desc">
+            <p class="p">Dark light, just light each other. The responsibility that you and my shoulders take together, such as one dust covers up. Only afraid the light suddenly put out in theendless dark night and countless loneliness.We are all in the position of the farmer. If we plant a good seed, we reap a good harvest. If our seed is poor and full of weeds, we reap a useless crop. If we plant nothing at all, we harvest nothing at all. I want the future to be better than the past. I do not want it contaminated by the mistakes and errors with which history is filled. We should all be concerned about the future because that is where we will spend the remainder of our lives.</p>
+        </div>
+        <div class="r_img" id="r_img"></div>
+    </div>
+
+    <div class="main" id="main">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+
+
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        window.onscroll=function(){
+            var oBannerCir=document.getElementById('banner_circle');
+            var oBannerWrap=document.getElementById('banner_wrap');
+            var oDesc=document.getElementById('l_desc');
+            var oDescP=oDesc.getElementsByTagName('p')[0];
+            var oImg=document.getElementById('r_img');
+            var oMain=document.getElementById('main');
+            var aLi=oMain.getElementsByTagName('li');
+
+
+            show(oBannerCir,'banner_circle_show');
+            show(oBannerWrap,'banner_wrap_show');
+            show(oDescP,'l_desc_p_show');
+            show(oImg,'r_img_show');
+            show(aLi,'li_show');
+
+        }
+
+        function show(obj,sClass){
+            var scrollTop=document.documentElement.scrollTop;
+            var clientHeight=(document.documentElement.clientHeight)/2;
+            if(obj.offsetTop<scrollTop+clientHeight){
+                $(obj).addClass(sClass);
+            }
+        }
+    </script>
+</body>
+</html>
