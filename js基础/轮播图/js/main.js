@@ -9,16 +9,20 @@ window.onload=function(){
 
     oList.style.width=aList.length*aList[0].offsetWidth+'px';
 
+    function tab(){
+        for(var i=0;i<aPiont.length;i++){
+            aPiont[i].style.background="#ccc";
+        }
+        aPiont[iNow].style.background="red";
+        oList.style.left=-aPiont[iNow].index*aList[0].offsetWidth+'px';
+    }
+
 
     for(var i=0;i<aPiont.length;i++){
         aPiont[i].index=i;
-
         aPiont[i].onclick=function(){
-            for(var i=0;i<aPiont.length;i++){
-                aPiont[i].style.background="#ccc";
-            }
-            this.style.background="red";
-            oList.style.left=-this.index*aList[0].offsetWidth+'px';
+            iNow=this.index;
+            tab();
         }
 
         var aListOneWidth=aList[0].offsetWidth;
