@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div1{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 10px;
+            height: 10px;
+            background: red;
+            margin-left: -5px;
+            margin-top: -5px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <canvas id="drawing" width='1000' height='1000'></convas>
+    
+
+    <script type="text/javascript">
+        var drawing=document.getElementById('drawing');
+
+        if(drawing.getContext){
+            var context=drawing.getContext('2d');
+
+            context.beginPath();
+
+            context.arc(100,100,99,0,2*Math.PI,false);
+
+            context.moveTo(194,100);
+            context.arc(100,100,94,0,2*Math.PI,false);
+
+            context.moveTo(100,100);
+            context.lineTo(100,15);
+
+            context.moveTo(100,100);
+            context.lineTo(35,100);
+
+            context.stroke();
+        }
+    </script>
+</body>
+</html>

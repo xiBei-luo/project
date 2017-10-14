@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="drawing" width='1000' height='1000'></convas>
+
+    <script type="text/javascript">
+        var drawing=document.getElementById('drawing');
+
+        if(drawing.getContext){
+            var context=drawing.getContext('2d');
+
+
+            context.strokeStyle='#ff0000';
+            context.strokeRect(10,10,50,50);
+            context.strokeStyle='rgba(0,0,255,0.5)';
+            context.strokeRect(30,30,50,50);
+        }
+    </script>
+</body>
+</html>

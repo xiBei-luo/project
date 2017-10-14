@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <canvas id="drawing" width='1000' height='1000'></convas>
+    
+
+    <script type="text/javascript">
+        var drawing=document.getElementById('drawing');
+
+        if(drawing.getContext){
+            var context=drawing.getContext('2d');
+
+            context.beginPath();
+
+            context.arc(100,100,99,0,2*Math.PI,false);
+
+            context.moveTo(194,100);
+            context.arc(100,100,94,0,2*Math.PI,false);
+
+            /*context.translate(100,100);//将坐标原点转换到（100，100）
+            context.rotate(1)*///围绕远点旋转（1）
+
+            context.moveTo(100,100);
+            context.arc(100,100,5,0,2*Math.PI,false);
+
+            context.moveTo(100,100);
+            context.lineTo(100,15);
+
+            context.moveTo(100,100);
+            context.lineTo(35,100);
+
+
+            context.font="bold 14px Arial";
+            context.textAlign="center";
+            context.textBaseline="middle";
+            context.fillText("12",100,20);
+            context.fillText("3",180,100);
+            context.fillText("6",100,180);
+            context.fillText("9",20,100);
+
+            context.stroke();
+        }
+    </script>
+    <!-- Math.PI为数学中的圆周率，在角度中表示180度 -->
+</body>
+</html>
