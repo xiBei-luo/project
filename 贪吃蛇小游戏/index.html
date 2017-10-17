@@ -15,9 +15,10 @@
             margin: 0px auto;
             border: 3px solid #999;
             box-sizing: border-box;
+            position: relative;
         }
         #snake{
-            width: 50px;
+            width: 20px;
             height: 20px;
             background: red;
             position: absolute;
@@ -38,11 +39,34 @@
             color: #fff;
             z-index: 2;
         }
+        #over button{
+            border:none;
+            width: 100px;
+            height: 40px;
+            position: absolute;
+            left: 200px;
+            top: 270px;
+            font-size: 18px;
+            color:green;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .addFood{
+            width: 10px;
+            height: 10px;
+            background: blue;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
     <div id="box">
-        <div id="over">Game Over!</div>
+        <div id="over">Game Over!
+            <button>再来一局</button>
+        </div>
         <div id="snake"></div>
     </div>
     
@@ -52,13 +76,33 @@
             var oSnake=document.getElementById('snake');
             var oBox=document.getElementById('box');
             var over=document.getElementById('over');
-            var timer=null;
+            var l=0;//左边界
+            var r=oBox.offsetWidth-oSnake.offsetWidth;//右边界
+            var t=0;//上边界
+            var b=oBox.offsetHeight-oSnake.offsetHeight;//下边界
 
-            /*timer=setInterval(function(){
-                oSnake.style.left=oSnake.offsetLeft+10+'px';
-            },1000)*/
+            timer=setInterval(starMove,500);
+            function starMove(){
+                if(oSnake.offsetLeft>=r){
+                    clearInterval(timer);
+                    gameOver();
+                }
+                else {
+                    oSnake.style.left=oSnake.offsetLeft+10+'px';
+                }
+            }
 
+            var addFood1=new AddFood();
+            var addFood2=new AddFood();
+            var addFood3=new AddFood();
+            var addFood4=new AddFood();
+            var addFood5=new AddFood();
+            var addFood6=new AddFood();
+            
+ 
+            
             document.onkeydown=function(ev){
+                clearInterval(timer);
                 var oEvent=ev||event;
                 if(oEvent.keyCode==37){
                     oSnake.style.left=oSnake.offsetLeft-10+'px';
@@ -71,37 +115,41 @@
                 }
                 else if(oEvent.keyCode==40){
                     oSnake.style.top=oSnake.offsetTop+10+'px';
-                }
-                if(oSnake.offsetLeft<oBox.offsetLeft+3){
-                    oSnake.style.left=oBox.offsetLeft+3+'px';
-                    over.style.display='block';
-                }
-                else if(oSnake.offsetLeft>oBox.offsetLeft+oBox.offsetWidth-oSnake.offsetWidth-3){
-                    oSnake.style.left=oBox.offsetLeft+oBox.offsetWidth-oSnake.offsetWidth-3+'px';
-                   
-                    over.style.display='block';
-                }
-                if(oSnake.offsetTop<oBox.offsetTop+3){
-                    oSnake.style.top=oBox.offsetTop+3+'px';
-                    over.style.display='block';
-                }
-                else if(oSnake.offsetTop>oBox.offsetTop+oBox.offsetHeight-oSnake.offsetHeight-3){
-                    oSnake.style.top=oBox.offsetTop+oBox.offsetHeight-oSnake.offsetHeight-3+'px';
-                    over.style.display='block';
-                }
-            }
+                }//键盘事件
 
-            /*document.onkeyup=function(){
-                timer=setInterval(function(){
-                    oSnake.style.left=oSnake.offsetLeft+10+'px';
-                },1000)
-            }*/
+
+                if(oSnake.offsetLeft<l){
+                    oSnake.style.left=l+'px';
+                    gameOver();
+                }
+                else if(oSnake.offsetLeft>r){
+                    oSnake.style.left=r+'px';
+                    gameOver();
+                }
+                if(oSnake.offsetTop<t){
+                    oSnake.style.top=t+'px';
+                    gameOver();
+                }
+                else if(oSnake.offsetTop>b){
+                    oSnake.style.top=b+'px';
+                    gameOver();
+                }//控制边界
+            }
         }
 
         function gameOver(){
-            clearInterval(timer);
             over.style.display='block';
         }
+
+        function AddFood(){
+            var oBox=document.getElementById('box');
+            var oFood=document.createElement('span');
+            oFood.className='addFood';
+            oFood.style.left=(Math.random()*990+1)+'px';
+            oFood.style.top=(Math.random()*490+1)+'px';
+
+            oBox.appendChild(oFood);
+        }//创建食物对象
     </script>
 </body>
 </html
