@@ -73,31 +73,28 @@
 
     <script type="text/javascript">
         window.onload=function(){
-            var oSnake=document.getElementById('snake');
-            var oBox=document.getElementById('box');
-            var over=document.getElementById('over');
-            var l=0;//左边界
-            var r=oBox.offsetWidth-oSnake.offsetWidth;//右边界
-            var t=0;//上边界
-            var b=oBox.offsetHeight-oSnake.offsetHeight;//下边界
+            var oSnake=document.getElementById('snake'),
+                oBox=document.getElementById('box'),
+                over=document.getElementById('over'),
+                l=0,//左边界
+                r=oBox.offsetWidth-oSnake.offsetWidth,//右边界
+                t=0,//上边界
+                b=oBox.offsetHeight-oSnake.offsetHeight;//下边界
 
             timer=setInterval(starMove,500);
-            function starMove(){
-                if(oSnake.offsetLeft>=r){
-                    clearInterval(timer);
-                    gameOver();
-                }
-                else {
-                    oSnake.style.left=oSnake.offsetLeft+10+'px';
-                }
-            }
 
-            var addFood1=new AddFood();
-            var addFood2=new AddFood();
-            var addFood3=new AddFood();
-            var addFood4=new AddFood();
-            var addFood5=new AddFood();
-            var addFood6=new AddFood();
+
+            var addFood1=new AddFood(Math.random()*990+1,Math.random()*490+1);
+            /*addFood1.showL();*/
+            var addFood2=new AddFood(Math.random()*990+1,Math.random()*490+1);
+            var addFood3=new AddFood(Math.random()*990+1,Math.random()*490+1);
+            var addFood4=new AddFood(Math.random()*990+1,Math.random()*490+1);
+            var addFood5=new AddFood(Math.random()*990+1,Math.random()*490+1);
+            var addFood6=new AddFood(Math.random()*990+1,Math.random()*490+1);
+            /*console.log(oSnake.offsetTop+','+addFood1.t);*/
+
+
+            
             
  
             
@@ -105,16 +102,16 @@
                 clearInterval(timer);
                 var oEvent=ev||event;
                 if(oEvent.keyCode==37){
-                    oSnake.style.left=oSnake.offsetLeft-10+'px';
+                    oSnake.style.left=oSnake.offsetLeft-5+'px';
                 }
                 else if(oEvent.keyCode==39){
-                    oSnake.style.left=oSnake.offsetLeft+10+'px';
+                    oSnake.style.left=oSnake.offsetLeft+5+'px';
                 }
                 if(oEvent.keyCode==38){
-                    oSnake.style.top=oSnake.offsetTop-10+'px';
+                    oSnake.style.top=oSnake.offsetTop-5+'px';
                 }
                 else if(oEvent.keyCode==40){
-                    oSnake.style.top=oSnake.offsetTop+10+'px';
+                    oSnake.style.top=oSnake.offsetTop+5+'px';
                 }//键盘事件
 
 
@@ -134,6 +131,14 @@
                     oSnake.style.top=b+'px';
                     gameOver();
                 }//控制边界
+
+
+                if(oSnake.offsetTop+oSnake.offsetHeight>addFood1.t||oSnake.offsetTop<addFood1.b||oSnake.offsetLeft+oSnake.offsetWidth<addFood1.l||oSnake.offsetLeft>addFood1.r){
+                    console.log(oSnake.offsetTop+oSnake.offsetHeight+','+addFood1.t+','+'未碰撞');
+                }
+                else {
+                    console.log('碰撞');
+                }//碰撞检测（有问题）
             }
         }
 
@@ -141,15 +146,41 @@
             over.style.display='block';
         }
 
-        function AddFood(){
+        function starMove(){
+            var oSnake=document.getElementById('snake'),
+                oBox=document.getElementById('box'),
+                r=oBox.offsetWidth-oSnake.offsetWidth;
+            if(oSnake.offsetLeft>=r){
+                clearInterval(timer);
+                gameOver();
+            }
+            else {
+                oSnake.style.left=oSnake.offsetLeft+10+'px';
+            }
+        }
+
+        function AddFood(l,t){
             var oBox=document.getElementById('box');
             var oFood=document.createElement('span');
             oFood.className='addFood';
-            oFood.style.left=(Math.random()*990+1)+'px';
-            oFood.style.top=(Math.random()*490+1)+'px';
-
+            oFood.style.left=l+'px';
+            oFood.style.top=t+'px';
             oBox.appendChild(oFood);
+
+            this.t=parseInt(t);
+            this.r=parseInt(l+oFood.offsetWidth);
+            this.b=parseInt(t+oFood.offsetHeight);
+            this.l=parseInt(l);//将每个食物的位置作为属性存储在构造函数中
         }//创建食物对象
+
+        AddFood.prototype={
+            constructor:AddFood,
+            showL:function(){
+                alert(this.t+','+this.r+','+this.b+','+this.l);
+            }
+        }
+
+        
     </script>
 </body>
 </html
