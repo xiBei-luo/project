@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-size: 14px;
+		}
+		body{
+			background: #F3F3F3;
+		}
+		a{
+			color:#000;
+			text-decoration: none;
+		}
+		.container{
+			width: 80%;
+			margin:60px auto 0;
+			background: #fff;
+		}
+		.box{
+			width: 28%;
+			display: inline-block;
+			transition: all 0.5s;
+		}
+		.box_l{
+			width: 43%;
+		}
+		.box_l .title{
+			background: #1e1e28;
+			color:#fff;
+		}
+		.box_l li{
+			border-bottom: 1px solid #f3f3f3;
+			padding:0px 30px 50px;
+		}
+
+		.box_l li:hover{
+			background: #f3f3f3;
+		}
+		.box_l .cont{
+			border:1px solid #ccc;
+			box-sizing: border-box;
+			border-top: none;
+			box-shadow: 0 0 20px #999;
+		}
+		.title{
+			font-size: 18px;
+			line-height: 72px;
+			border-bottom: 1px solid #f3f3f3;
+			padding-left: 20px;
+		}
+		.cont{
+			padding-top: 20px;
+		}
+		.cont li{
+			line-height: 42px;
+			padding-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box box_l">
+			<div class="title">促销产品</div>
+			<div class="cont">
+				<ul>
+					<li><a href="#">音视频直播</a></li>
+					<li><a href="#">内容分发网络</a></li>
+					<li><a href="#">音视频点播</a></li>
+					<li><a href="#">简单消息服务</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="box">
+			<div class="title">新产品</div>
+			<div class="cont">
+				<ul>
+					<li><a href="#">CPU服务器</a></li>
+					<li><a href="#">数据众包服务</a></li>
+					<li><a href="#">百度舆情</a></li>
+					<li><a href="#">容器引擎</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="box">
+			<div class="title">热门产品</div>
+			<div class="cont">
+				<ul>
+					<li><a href="#">服务器晕</a></li>
+					<li><a href="#">弹性公网IP</a></li>
+					<li><a href="#">域名服务</a></li>
+					<li><a href="#">云磁盘</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		var aBox=document.getElementsByClassName('box');
+
+		for(var i=0;i<aBox.length;i++){
+			aBox[i].onmouseover=function(){
+				for(var i=0;i<aBox.length;i++){
+					aBox[i].className='box';
+				}
+				this.classList.add('box_l');
+			}
+		}
+	</script>
+</body>
+</html>
