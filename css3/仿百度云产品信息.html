@@ -21,14 +21,21 @@
 			width: 80%;
 			margin:60px auto 0;
 			background: #fff;
+			display: flex;
+			justify-content: space-between;
 		}
 		.box{
-			width: 28%;
+			width: 32.33%;
 			display: inline-block;
+			transform: scale(1);
 			transition: all 0.5s;
+			background: #fff;
+			opacity: 0.8;
 		}
 		.box_l{
-			width: 43%;
+			transform: scale(1.1);
+			z-index: 99;
+			opacity: 1
 		}
 		.box_l .title{
 			background: #1e1e28;
@@ -47,6 +54,7 @@
 			box-sizing: border-box;
 			border-top: none;
 			box-shadow: 0 0 20px #999;
+
 		}
 		.title{
 			font-size: 18px;
@@ -54,9 +62,7 @@
 			border-bottom: 1px solid #f3f3f3;
 			padding-left: 20px;
 		}
-		.cont{
-			padding-top: 20px;
-		}
+		
 		.cont li{
 			line-height: 42px;
 			padding-left: 20px;
