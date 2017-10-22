@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="jquery.fullPage.css">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		p{
+			margin-top: 50px;
+			font-size: 22px;
+		}
+		.section1 h3,.section1 p,.section ul,.section3 p,.section4 p,.section5 p{
+			transition: all 1s;
+			position: relative;
+		}
+		.section{
+			font-size: 42px;
+			color:#fff;
+			text-align: center;
+		}
+		.section1 { 
+			background: url(timg.jpg); 
+			width: 100%;
+			height:100%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.section1 h3{
+			top: -50%;
+		}
+		.section1 p { 
+			bottom: -50%;
+		}
+		.section2 h3{
+			position: relative;
+		}
+		.section2 li{ 
+			font-size: 14px;
+			position: relative; 
+			padding: 15px 15px;
+            background: #fff;
+            color: #f05555;
+            flex: auto;
+            margin:5px;
+            text-align: center;
+            cursor: pointer;	
+		}
+		.section ul{
+            width: 450px;
+            margin: 50px auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            transform: scale(0);
+        }
+		.section3 p { 
+			left: -120%;
+		}
+		.section4 p { 
+			right: -120%;
+		}
+		.section4 { 
+			background: url(timg2.jpg); 
+			width: 100%;
+			height:100%;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.section5 p { 
+			opacity: 0;
+		}
+	</style>
+
+	<script src="jquery-3.2.1.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<script src="jquery.fullPage.js"></script>
+
+	<script>
+		$(function(){
+			$('#dowebok').fullpage({
+				sectionsColor: ['#666', '#f05555', '#068447', '#009999','#4BBFC3'],
+				'navigation': true,
+				anchors:['page1','page2','page3','page4','page5'],
+				navigationTooltips:['page1','page2','page3','page4','page5'],
+				/*continuousVertical: true,*/
+				afterLoad: function(anchorLink, index){
+					if(index == '1'){
+						$('.section1').find('p').delay(500).css({"bottom":"0","opacity":"1"});
+					}
+					if(index == '1'){
+						$('.section1').find('h3').delay(500).css({"top":"0","opacity":"1"});
+					}
+					if(index == 2){
+						$('.section2').find('ul').delay(500).css({"transform":"scale(1)","opacity":"1"});
+					}
+					if(index == 3){
+						$('.section3').find('p').delay(500).css({"left":"0","opacity":"1"});
+					}
+					if(index == 4){
+						$('.section4').find('p').delay(500).css({"right":"0","opacity":"1"});
+					}
+					if(index == 5){
+						$('.section5').find('p').delay(500).css({"opacity":"1"});
+					}
+				},
+				onLeave: function(index, direction){
+					if(index == '1'){
+						$('.section1').find('p').delay(500).css({"bottom":"-50%","opacity":"0"});
+					}
+					if(index == '1'){
+						$('.section1').find('h3').delay(500).css({"top":"-50%","opacity":"0"});
+					}
+					if(index == '2'){
+						$('.section2').find('ul').css({"transform":"scale(0)","opacity":"0"});
+					}
+					if(index == '3'){
+						$('.section3').find('p').delay(500).css({"left":"-120%","opacity":"0"});
+					}
+					if(index == '4'){
+						$('.section4').find('p').delay(500).css({"right":"-120%","opacity":"0"});
+					}
+					if(index == '5'){
+						$('.section5').find('p').delay(500).css({"opacity":"0"});
+					}
+				}
+			});
+
+
+			$(window).resize(function(){
+		        autoScrolling();
+		    });
+
+		    function autoScrolling(){
+		        var $ww = $(window).width();
+		        if($ww < 1024){
+		            $.fn.fullpage.setAutoScrolling(false);
+		        } else {
+		            $.fn.fullpage.setAutoScrolling(true);
+		        }
+		    }
+		    autoScrolling();
+
+		});
+		</script>
+</head>
+<body>
+	<div id="dowebok">
+		<div class="section section1">
+			<h3>Hi,我是罗文旅</h3>
+			<p>一只在风中摇曳的前端小菜鸟</p>
+			<!-- <p>四川旅游学院  本科  2014.09-2018.06</p>
+			<p>信息管理与信息系统</p> -->
+		</div>
+		<div class="section section2">
+			<h3>技能展示</h3>
+			<ul class="skill" id="skill">
+	            <li>Http</li>
+	            <li>PhotoShop</li>
+	            <li>Illustrator</li>
+	            <li>Ajax</li>
+	            <li>Gulp</li>
+	            <li>Less</li>
+	            <li>HTML(5)</li>
+	            <li>CSS(3)</li>
+	            <li>JavaScript</li>
+	            <li>WebSocket</li>
+	            <li>BootStrap</li>
+	            <li>NodeJs</li>
+	            <li>VueJs</li>
+	            <li>PHP</li>
+	            <li>JQuery</li>
+	            <li>FullPage</li>
+	            <li>MySql</li>
+	            <li>Json</li>
+	            <li>Canvas</li>
+	            <li>SqlSever</li>
+	        </ul>
+		</div>
+		<div class="section section3">
+			<h3>实践经历</h3>
+			<p>实践经历——图片</p>
+		</div>
+		<div class="section section4">
+			<h3>给我留言</h3>
+			<p>登录后可留言</p>
+		</div>
+		<div class="section section5">
+			<h3>联系方式/社交账号</h3>
+			<p>微信/QQ/github主页/CSDN主页</p>
+		</div>
+	</div>
+
+
+
+	
+</body>
+</html>
