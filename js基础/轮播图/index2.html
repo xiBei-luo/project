@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #container{
+            width: 674px;
+            height: 370px;
+            margin:30px auto 0;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        #ul1 {
+            position: absolute;
+            transition: all 1s;
+        }
+        #ul1 li{
+            float: left;
+        }
+        #ul1 img{
+            width: 674px;
+            height:370px;
+        }
+        #btn{
+            position: relative;
+            top: 150px;
+        }
+        #btn a{
+            width: 50px;
+            height: 50px;
+            background: red;
+            text-decoration: none;
+            display: inline-block;
+        }
+        #next{
+            position: absolute;
+            right: 0;
+        }
+        #ul2{
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            margin-left: -50px;
+        }
+        #ul2 li{
+            width: 20px;
+            height: 20px;
+            background: #ccc;
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+        }
+        #ul2 .active{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="ul1">
+            <li><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+            <li><img src="img/5.jpg" alt=""></li>
+        </ul>
+
+        <div id="btn">
+            <a href="#" id="prev"><</a>
+            <a href="#" id="next">></a>
+        </div>
+
+        <ul id="ul2">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <script>
+        var oUl1=document.getElementById('ul1'),
+            aImg=oUl1.getElementsByTagName('img'),
+            oUl2=document.getElementById('ul2'),
+            aLi=oUl2.getElementsByTagName('li'),
+            oNext=document.getElementById('next'),
+            oPrev=document.getElementById('prev'),
+            timer=null,
+            iNow=0;
+
+        oUl1.style.width=aImg[0].offsetWidth*aImg.length+'px';//设置整个ul的宽度
+
+
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index=i;
+            aLi[i].onclick=function(){
+                iNow=this.index;
+                tab();
+            };
+            aLi[i].onmouseover=function(){
+                clearInterval(timer);
+            } 
+        }
+
+        oNext.onclick=function(){
+            iNow++;
+            if(iNow==5){
+                iNow=4;
+            }
+            tab();
+        }
+        oPrev.onclick=function(){
+            iNow--;
+            if(iNow==-1){
+                iNow=0;
+            }
+            tab();
+        }
+
+        timer=setInterval(function(){
+            iNow++;
+            if(iNow==5){
+                iNow=0;
+            }
+            tab();
+        },2000)
+
+
+        function tab(){
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].className=' ';
+            }
+            aLi[iNow].className='active';
+            oUl1.style.left=-aImg[0].offsetWidth*iNow+'px';
+        }
+    </script>
+</body>
+</html>
