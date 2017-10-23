@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		li{
+			background: red;
+			height:20px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+
+	<script>
+		var oUl=document.getElementById('ul1'),
+			aLi=oUl.getElementsByTagName('li');
+
+
+
+		oUl.onclick = function(ev){
+	　　　　var ev = ev || window.event;
+	　　　　var target = ev.target || ev.srcElement;
+	　　　　if(target.nodeName.toLowerCase() == 'li'){
+	　 　　　　　　 alert(123);
+	　　　　　　　  alert(target.innerHTML);
+	　　　　}
+	　　}
+
+		/*oUl.onclick=function(){
+			alert(1)
+		}*/
+
+		/*for(var i=0;i<aLi.length;i++){
+			aLi[i].onclick=function(){
+				alert(1)
+			}
+		}*/
+	</script>
+</body>
+</html>
